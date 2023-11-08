@@ -1,2 +1,1 @@
-export * from './isValidColor';
-export * from './toHex';
+export * from './screenshot';

@@ -20,11 +20,7 @@ const run = async () => {
     return;
   }
 
-  if (!args.colors) {
-    throw new Error('List of colors must be provided.');
-  }
-
-  await printResults(args._, args.colors);
+  await printResults(args._);
 };
 
 try {
