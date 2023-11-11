@@ -32,18 +32,21 @@ export const generatePreview = async (fileNames: string[]) => {
 
 const createTheme = (theme: 'light' | 'dark', fileNames: string[]): string => {
   const iconsTemplate = fileNames.reduce((acc, fileName) => {
-    const iconName = fileName.split('./')[1];
+    const iconName = fileName.split('./')[1].split('.svg')[0];
 
     if (
       (theme === 'dark' && iconName.includes('_light')) ||
       (theme === 'light' &&
-        fileNames.includes(`${iconName}_light.svg`) &&
-        fileName !== `${iconName}_light.svg`)
+        fileNames.includes(`./${iconName}_light.svg`) &&
+        fileName !== `./${iconName}_light.svg`)
     ) {
       return acc;
     }
 
-    return `${acc}<li><div class="icon"><img src="../../${fileName}" alt="${iconName}" /><span class="iconName">${iconName}</span></div></li>`;
+    return `${acc}<li><div class="icon"><img src="../../${fileName}" alt="${iconName}" /><span class="iconName">${iconName.replace(
+      '_light',
+      ''
+    )}</span></div></li>`;
   }, '');
 
   return `<div class="theme-container ${theme}"><h2>${titleCase(
