@@ -1,6 +1,7 @@
+import glob from 'glob';
 import isGlob from 'is-glob';
+import { promisify } from 'util';
 import { generatePreview } from '../../core';
-import { globAsync } from '../../core/async';
 import { Results } from '../../core/models';
 
 const printResults = async (filePatterns: string[]) => {
@@ -16,7 +17,7 @@ const getResults = async (filePatterns: string[]): Promise<Results> => {
 
   for (const filePattern of filePatterns) {
     const globFiles = isGlob(filePattern)
-      ? await globAsync(filePattern)
+      ? await promisify(glob)(filePattern)
       : [filePattern];
 
     generatePreview(globFiles);
