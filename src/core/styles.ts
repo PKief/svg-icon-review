@@ -8,6 +8,6 @@ export const previewStyles = `
     .theme-container.dark { color: var(--dark-theme-font-color); background: var(--dark-theme-bg-color); }
     .theme-container.light { color: var(--light-theme-font-color); background: var(--light-theme-bg-color); }
     .icon { display: flex; align-items: center; }
-    .icon > img { width: 16px; height: 22px; padding-right: 6px; }
+    .icon > svg { width: 16px; height: 22px; padding-right: 6px; }
     .icon > span { font-size: 13px; }
 `;

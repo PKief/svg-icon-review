@@ -9,7 +9,7 @@
     "vscode-icon-theme-reviewer": "./bin/cli.js"
   },
   "scripts": {
-    "start": "node ./bin/cli.js ./*.svg",
+    "start": "node ./bin/cli.js *.svg",
     "build:watch": "npm run build -- --watch",
     "build": "tsc -p tsconfig.json",
     "test": "jest",

@@ -1,6 +1,7 @@
-import { writeFileSync } from 'fs';
-import { join } from 'path';
+import { readFileSync, writeFileSync } from 'fs';
+import { basename, join } from 'path';
 import { green, red } from '../cli/utils';
+import { Theme } from './models';
 import { previewStyles } from './styles';
 import { createScreenshot } from './utils/screenshot';
 
@@ -10,8 +11,16 @@ import { createScreenshot } from './utils/screenshot';
  * @param fileNames List of SVG file names
  */
 export const generatePreview = async (fileNames: string[]) => {
-  const darkTheme = createTheme('dark', fileNames);
-  const lightTheme = createTheme('light', fileNames);
+  const darkTheme = createTheme(
+    'dark',
+    fileNames.filter((f) => !f.includes('_light'))
+  );
+  const lightTheme = createTheme(
+    'light',
+    fileNames.filter((f) =>
+      fileNames.includes(`${basename(f, '.svg')}_light.svg`) ? false : true
+    )
+  );
   const previewTemplate = `<!DOCTYPE html><head><style>${previewStyles}</style></head>
   <body><div class="theme-review">${darkTheme}${lightTheme}</div></body>
   `;
@@ -30,23 +39,12 @@ export const generatePreview = async (fileNames: string[]) => {
   }
 };
 
-const createTheme = (theme: 'light' | 'dark', fileNames: string[]): string => {
+const createTheme = (theme: Theme, fileNames: string[]): string => {
   const iconsTemplate = fileNames.reduce((acc, fileName) => {
-    const iconName = fileName.split('./')[1].split('.svg')[0];
+    const iconName = basename(fileName, '.svg');
+    const svg = readFileSync(fileName, 'utf8');
 
-    if (
-      (theme === 'dark' && iconName.includes('_light')) ||
-      (theme === 'light' &&
-        fileNames.includes(`./${iconName}_light.svg`) &&
-        fileName !== `./${iconName}_light.svg`)
-    ) {
-      return acc;
-    }
-
-    return `${acc}<li><div class="icon"><img src="../../${fileName}" alt="${iconName}" /><span class="iconName">${iconName.replace(
-      '_light',
-      ''
-    )}</span></div></li>`;
+    return `${acc}<li><div class="icon">${svg}<span class="iconName">${iconName}</span></div></li>`;
   }, '');
 
   return `<div class="theme-container ${theme}"><h2>${titleCase(
