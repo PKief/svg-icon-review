@@ -32,7 +32,7 @@ export const generatePreview = async (fileNames: string[]) => {
     await createScreenshot(previewHtmlPath, 'preview');
 
     // write generate preview html file
-    writeFileSync(join('.', 'preview.html'), previewTemplate);
+    console.log(previewTemplate);
 
     console.log(
       '> Material Icon Theme:',
@@ -48,7 +48,7 @@ const createTheme = (theme: Theme, fileNames: string[]): string => {
     const iconName = basename(fileName, '.svg');
     const svg = readFileSync(fileName, 'utf8');
 
-    return `${acc}<li><div class="icon">${svg}<span class="iconName">${iconName}</span></div></li>`;
+    return `${acc}<li><div class="icon"><span class="icon-file" style="background-image: url(${fileName});"></span><span class="iconName">${iconName}</span></div></li>`;
   }, '');
 
   return `<div class="theme-container ${theme}"><h2>${titleCase(
