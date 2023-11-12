@@ -1,4 +1,4 @@
 {
-  "repositoryUrl": "https://github.com/PKief/vscode-icon-theme-reviewer",
+  "repositoryUrl": "https://github.com/PKief/svg-icon-review",
   "blacklistPattern": "^Release \\d+\\.\\d+\\.\\d+|^\\d+\\.\\d+\\.\\d+$"
 }
