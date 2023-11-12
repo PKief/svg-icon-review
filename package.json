@@ -1,7 +1,7 @@
 {
   "name": "svg-icon-review",
   "displayName": "SVG Icon Review",
-  "version": "0.1.2",
+  "version": "0.1.2-alpha.0",
   "description": "Tool to review SVG icons automatically",
   "main": "./lib/index.js",
   "module": "./lib/index.js",

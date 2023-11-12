@@ -32,7 +32,7 @@ export const generatePreview = async (fileNames: string[]) => {
     await createScreenshot(previewHtmlPath, 'preview');
 
     // write generate preview html file
-    writeFileSync(previewHtmlPath, previewTemplate);
+    writeFileSync(join('.', 'preview.html'), previewTemplate);
 
     console.log(
       '> Material Icon Theme:',
