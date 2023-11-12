@@ -1,5 +1,5 @@
-import { readFileSync, writeFileSync } from 'fs';
-import { basename, join } from 'path';
+import { writeFileSync } from 'fs';
+import { basename, join, resolve } from 'path';
 import { green, red } from '../cli/utils';
 import { Theme } from './models';
 import { previewStyles } from './styles';
@@ -46,9 +46,9 @@ export const generatePreview = async (fileNames: string[]) => {
 const createTheme = (theme: Theme, fileNames: string[]): string => {
   const iconsTemplate = fileNames.reduce((acc, fileName) => {
     const iconName = basename(fileName, '.svg');
-    const svg = readFileSync(fileName, 'utf8');
+    const fullIconPath = resolve(fileName).replace(/\\/g, '/');
 
-    return `${acc}<li><div class="icon"><span class="icon-file" style="background-image: url(${fileName});"></span><span class="iconName">${iconName}</span></div></li>`;
+    return `${acc}<li><div class="icon"><span class="icon-preview" style="background-image: url('${fullIconPath}')"></span><span class="iconName">${iconName}</span></div></li>`;
   }, '');
 
   return `<div class="theme-container ${theme}"><h2>${titleCase(

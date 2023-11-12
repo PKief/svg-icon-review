@@ -13,17 +13,15 @@ export const createScreenshot = async (filePath: string, fileName: string) => {
       headless: 'new',
     });
     const page = await browser.newPage();
-    await page.setViewport({
-      height: 10,
-      width: 1000,
-    });
+    await page.setViewport({ width: 800, height: 800, deviceScaleFactor: 1.5 });
 
     await page.goto(htmlFilePath);
 
-    await page.screenshot({
+    const themeReviewElement = await page.$('.theme-review');
+
+    await themeReviewElement?.screenshot({
       path: `./${fileName}.png`,
       omitBackground: true,
-      fullPage: true,
     });
 
     await browser.close();
