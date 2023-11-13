@@ -3,7 +3,7 @@ export const previewStyles = `
     body { margin: 0; padding: 0; font-family: arial, sans-serif; border-collapse: collapse; width: 100%; background: var(--main-bg-color); font-size: 1rem; }
     .theme-review { display: grid; grid-template-columns: 200px 200px; grid-template-rows: 1fr; width: 400px; }
     .theme-review ul { list-style: none; padding: 0; margin: 0; }
-    .theme-container { padding: 10px; }
+    .theme-container { padding: 1rem; }
     .theme-container > h2 { font-size: 1rem; margin-top: 0; }
     .theme-container.dark { color: var(--dark-theme-font-color); background: var(--dark-theme-bg-color); }
     .theme-container.light { color: var(--light-theme-font-color); background: var(--light-theme-bg-color); }
