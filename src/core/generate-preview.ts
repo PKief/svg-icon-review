@@ -1,7 +1,7 @@
 import { writeFileSync } from 'fs';
 import { basename, join, resolve } from 'path';
 import { green, red } from '../cli/utils';
-import { Theme } from './models';
+import { Config, Theme } from './models';
 import { previewStyles } from './styles';
 import { createScreenshot } from './utils/screenshot';
 
@@ -10,7 +10,7 @@ import { createScreenshot } from './utils/screenshot';
  *
  * @param fileNames List of SVG file names
  */
-export const generatePreview = async (fileNames: string[]) => {
+export const generatePreview = async (fileNames: string[], config: Config) => {
   const darkTheme = createTheme(
     'dark',
     fileNames.filter((f) => !f.includes('_light'))
@@ -31,11 +31,13 @@ export const generatePreview = async (fileNames: string[]) => {
   try {
     await createScreenshot(previewHtmlPath, 'preview');
 
-    // write generate preview html file
-    console.log(previewTemplate);
+    if (config.silent) return;
+    if (config.debug) {
+      console.log(previewTemplate);
+    }
 
     console.log(
-      '> Material Icon Theme:',
+      '> SVG Icon Review:',
       green(`Successfully created preview image!`)
     );
   } catch (error) {

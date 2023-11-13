@@ -1,12 +1,9 @@
 import { glob } from 'glob';
 import isGlob from 'is-glob';
-import { generatePreview } from '../../core';
+import { Config, generatePreview } from '../../core';
+import { printHelp } from './printHelp';
 
-const printResults = async (filePatterns: string[]) => {
-  await getResults(filePatterns);
-};
-
-const getResults = async (filePatterns: string[]): Promise<void> => {
+const printResults = async (filePatterns: string[], config: Config) => {
   const iconFileNames = [];
   for (const filePattern of filePatterns) {
     const globFiles = isGlob(filePattern)
@@ -15,7 +12,14 @@ const getResults = async (filePatterns: string[]): Promise<void> => {
 
     iconFileNames.push(...globFiles);
   }
-  generatePreview(iconFileNames);
+
+  if (iconFileNames.length === 0) {
+    console.error('⚠️ No files found. Please check your file pattern.');
+    printHelp();
+    return;
+  }
+
+  await generatePreview(iconFileNames, config);
 };
 
 export { printResults };
