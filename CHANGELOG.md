@@ -3,6 +3,12 @@
  All notable changes to this project will be documented in this file. Dates are displayed in UTC.
 
  
+#### [v0.1.4](https://github.com/PKief/svg-icon-review/compare/v0.1.3...v0.1.4) 
+
+> November 13, 2023 
+
+- Update styles [`9c5e480`](https://github.com/PKief/svg-icon-review/commit/9c5e480)
+ 
 #### [v0.1.3](https://github.com/PKief/svg-icon-review/compare/v0.1.2...v0.1.3) 
 
 > November 13, 2023 
