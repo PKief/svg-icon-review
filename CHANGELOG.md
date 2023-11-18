@@ -3,6 +3,12 @@
  All notable changes to this project will be documented in this file. Dates are displayed in UTC.
 
  
+#### [v0.1.5](https://github.com/PKief/svg-icon-review/compare/v0.1.4...v0.1.5) 
+
+> November 18, 2023 
+
+- Fix issue with light theme [`ce4491e`](https://github.com/PKief/svg-icon-review/commit/ce4491e)
+ 
 #### [v0.1.4](https://github.com/PKief/svg-icon-review/compare/v0.1.3...v0.1.4) 
 
 > November 13, 2023 
