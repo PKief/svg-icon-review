@@ -17,8 +17,11 @@ export const generatePreview = async (fileNames: string[], config: Config) => {
   );
   const lightTheme = createTheme(
     'light',
-    fileNames.filter((f) =>
-      fileNames.includes(`${basename(f, '.svg')}_light.svg`) ? false : true
+    fileNames.filter(
+      (f) =>
+        !fileNames.some((otherFile) =>
+          otherFile.includes(`${basename(f, '.svg')}_light.svg`)
+        )
     )
   );
   const previewTemplate = `<!DOCTYPE html><head><style>${previewStyles}</style></head>
