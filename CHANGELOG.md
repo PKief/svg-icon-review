@@ -3,6 +3,13 @@
  All notable changes to this project will be documented in this file. Dates are displayed in UTC.
 
  
+#### [v1.0.0](https://github.com/PKief/svg-icon-review/compare/v0.1.5...v1.0.0) 
+
+> March 20, 2024 
+
+- Show pixel perfekt icon preview [`81ebc42`](https://github.com/PKief/svg-icon-review/commit/81ebc42)
+- Update VS Code settings [`41801f8`](https://github.com/PKief/svg-icon-review/commit/41801f8)
+ 
 #### [v0.1.5](https://github.com/PKief/svg-icon-review/compare/v0.1.4...v0.1.5) 
 
 > November 18, 2023 
