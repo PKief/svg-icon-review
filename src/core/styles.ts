@@ -11,7 +11,7 @@ export const previewStyles = `
     .theme-container.dark .divider { background: var(--dark-theme-font-color); }
     .theme-container.light { color: var(--light-theme-font-color); background: var(--light-theme-bg-color); }
     .theme-container.light .divider { background: var(--light-theme-font-color); }
-    .icon { display: grid; align-items: center; grid-template-columns: 16px auto; gap: 5px; }
+    .icon { display: grid; align-items: center; white-space: nowrap; grid-template-columns: 16px auto; gap: 5px; }
     .icon.with-big-icon { grid-template-columns: 32px 16px 16px auto; }
     .icon-preview { content: " "; background-size: 32px; background-position: 0; background-repeat: no-repeat; width: 32px; height: 32px; }
     .divider { height: 75%; width: 1px; justify-self: center; border-radius: 16px; }
