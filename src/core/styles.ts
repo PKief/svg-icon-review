@@ -7,8 +7,12 @@ export const previewStyles = `
     .theme-container { padding: 1rem; }
     .theme-container > h2 { font-size: 1rem; margin-top: 0; }
     .theme-container.dark { color: var(--dark-theme-font-color); background: var(--dark-theme-bg-color); }
+    .theme-container.dark .divider { background: var(--dark-theme-font-color); }
     .theme-container.light { color: var(--light-theme-font-color); background: var(--light-theme-bg-color); }
-    .icon { display: grid; align-items: center; grid-template-columns: 32px auto; gap: 16px; }
+    .theme-container.light .divider { background: var(--light-theme-font-color); }
+    .icon { display: grid; align-items: center; grid-template-columns: 32px 16px 16px auto; gap: 5px; }
     .icon-preview { content: " "; background-size: 32px; background-position: 0; background-repeat: no-repeat; width: 32px; height: 32px; }
-    .icon > span { font-size: 32px; text-overflow: ellipsis; overflow: hidden; }
+    .divider { height: 75%; width: 1px; justify-self: center; border-radius: 16px; }
+    .icon-preview-small { content: ' '; background-size: 16px; background-position: 0; background-repeat: no-repeat; width: 16px; height: 16px; }
+    .icon > span { font-size: 13px; text-overflow: ellipsis; overflow: hidden; }
 `;

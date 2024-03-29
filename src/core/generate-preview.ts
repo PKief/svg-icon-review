@@ -53,7 +53,15 @@ const createTheme = (theme: Theme, fileNames: string[]): string => {
     const iconName = basename(fileName, '.svg');
     const fullIconPath = resolve(fileName).replace(/\\/g, '/');
 
-    return `${acc}<li><div class="icon"><span class="icon-preview" style="background-image: url('${fullIconPath}')"></span><span class="iconName">${iconName}</span></div></li>`;
+    return `${acc}
+    <li>
+      <div class="icon">
+        <span class="icon-preview" style="background-image: url('${fullIconPath}')"></span>
+        <div class="divider"></div>
+        <span class="icon-preview-small" style="background-image: url('C:/Projects/svg-icon-review/logo.svg');"></span>
+        <span class="iconName">${iconName}</span>
+      </div>
+    </li>`;
   }, '');
 
   return `<div class="theme-container ${theme}"><h2>${titleCase(
