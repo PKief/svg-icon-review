@@ -3,6 +3,14 @@
  All notable changes to this project will be documented in this file. Dates are displayed in UTC.
 
  
+#### [v1.1.0](https://github.com/PKief/svg-icon-review/compare/v1.0.0...v1.1.0) 
+
+> March 29, 2024 
+
+- fix: add nowrap to icon names [`79b9918`](https://github.com/PKief/svg-icon-review/commit/79b9918)
+- feat: add option to show bigger icon in front of small icon [`9de5e93`](https://github.com/PKief/svg-icon-review/commit/9de5e93)
+- Update preview to show big and small sizes of icon [`f1a5b4c`](https://github.com/PKief/svg-icon-review/commit/f1a5b4c)
+ 
 #### [v1.0.0](https://github.com/PKief/svg-icon-review/compare/v0.1.5...v1.0.0) 
 
 > March 20, 2024 
