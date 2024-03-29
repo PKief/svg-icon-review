@@ -13,7 +13,8 @@ import { createScreenshot } from './utils/screenshot';
 export const generatePreview = async (fileNames: string[], config: Config) => {
   const darkTheme = createTheme(
     'dark',
-    fileNames.filter((f) => !f.includes('_light'))
+    fileNames.filter((f) => !f.includes('_light')),
+    config.bigIcon
   );
   const lightTheme = createTheme(
     'light',
@@ -22,7 +23,8 @@ export const generatePreview = async (fileNames: string[], config: Config) => {
         !fileNames.some((otherFile) =>
           otherFile.includes(`${basename(f, '.svg')}_light.svg`)
         )
-    )
+    ),
+    config.bigIcon
   );
   const previewTemplate = `<!DOCTYPE html><head><style>${previewStyles}</style></head>
   <body><div class="theme-review">${darkTheme}${lightTheme}</div></body>
@@ -48,17 +50,21 @@ export const generatePreview = async (fileNames: string[], config: Config) => {
   }
 };
 
-const createTheme = (theme: Theme, fileNames: string[]): string => {
+const createTheme = (
+  theme: Theme,
+  fileNames: string[],
+  bigIcon = false
+): string => {
   const iconsTemplate = fileNames.reduce((acc, fileName) => {
     const iconName = basename(fileName, '.svg');
     const fullIconPath = resolve(fileName).replace(/\\/g, '/');
+    const bigIconPreview = `<span class="icon-preview" style="background-image: url('${fullIconPath}')"></span><div class="divider"></div>`;
 
     return `${acc}
-    <li>
-      <div class="icon">
-        <span class="icon-preview" style="background-image: url('${fullIconPath}')"></span>
-        <div class="divider"></div>
-        <span class="icon-preview-small" style="background-image: url('C:/Projects/svg-icon-review/logo.svg');"></span>
+    <li class="${bigIcon ? 'with-big-icon' : ''}">
+      <div class="icon ${bigIcon ? 'with-big-icon' : ''}">
+        ${bigIcon ? bigIconPreview : ''}
+        <span class="icon-preview-small" style="background-image: url('${fullIconPath}')"></span>
         <span class="iconName">${iconName}</span>
       </div>
     </li>`;

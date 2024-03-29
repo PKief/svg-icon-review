@@ -8,9 +8,11 @@ const printHelp = () => {
     $ npx svg-icon-review ./icons/*.svg
 
   Options
-    --silent, -s  Not showing any output
+    --bigIcons, -b  Show big icons in front of the small icons
     --debug, -d  Show generated HTML
     --help, -h  Show help
+    --silent, -s  Not showing any output
+    --version, -v  Show version
     `
   );
 };

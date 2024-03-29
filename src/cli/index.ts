@@ -23,6 +23,7 @@ const run = async () => {
   await printResults(args._, {
     debug: args.debug ?? false,
     silent: args.silent ?? false,
+    bigIcon: args.bigIcon ?? false,
   });
 };
 
