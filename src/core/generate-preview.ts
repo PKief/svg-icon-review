@@ -9,8 +9,14 @@ import { createScreenshot } from './utils/screenshot';
  * Generates a preview of dark and light theme of SVG icons.
  *
  * @param fileNames List of SVG file names
+ * @param config Configuration including custom name for the output file. If not provided, no file will be generated.
  */
 export const generatePreview = async (fileNames: string[], config: Config) => {
+  if (!config.previewFile) {
+    console.log(red('No output file name provided. Skipping preview generation.'));
+    return;
+  }
+
   const darkTheme = createTheme(
     'dark',
     fileNames.filter((f) => !f.includes('_light')),
@@ -34,7 +40,7 @@ export const generatePreview = async (fileNames: string[], config: Config) => {
   writeFileSync(previewHtmlPath, previewTemplate);
 
   try {
-    await createScreenshot(previewHtmlPath, 'preview');
+    await createScreenshot(previewHtmlPath, config.previewFile);
 
     if (config.silent) return;
     if (config.debug) {
@@ -46,7 +52,7 @@ export const generatePreview = async (fileNames: string[], config: Config) => {
       green(`Successfully created preview image!`)
     );
   } catch (error) {
-    throw Error(red(`Error while creating  preview image`));
+    throw Error(red(`Error while creating preview image`));
   }
 };
 

@@ -7,6 +7,7 @@ export type CliFlags = {
   debug?: boolean;
   silent?: boolean;
   bigIcon?: boolean;
+  previewFile?: string; // Allows specifying a custom name for the output file using a --preview-file flag
 };
 
 const flags: minimist.Opts | undefined = {
@@ -17,7 +18,10 @@ const flags: minimist.Opts | undefined = {
     'silent',
     'bigIcon',
   ] satisfies (keyof (CliFlags & Config))[],
-  alias: { v: 'version', h: 'help', d: 'debug', s: 'silent', b: 'bigIcon' },
+  string: [
+    'previewFile',
+  ],
+  alias: { v: 'version', h: 'help', d: 'debug', s: 'silent', b: 'bigIcon', p: 'previewFile' },
   unknown: (a) => true,
   default: { lang: 'en' },
   '--': true,

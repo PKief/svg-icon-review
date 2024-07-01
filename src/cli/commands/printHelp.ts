@@ -13,6 +13,7 @@ const printHelp = () => {
     --help, -h  Show help
     --silent, -s  Not showing any output
     --version, -v  Show version
+    --previewFile, -p  Specify a custom name for the output file. If not provided, no file will be generated.
     `
   );
 };
