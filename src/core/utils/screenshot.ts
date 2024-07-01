@@ -10,7 +10,7 @@ export const createScreenshot = async (filePath: string, fileName: string) => {
   try {
     const htmlFilePath = join('file://', filePath);
     const browser = await puppeteer.launch({
-      headless: 'new',
+      headless: true,
     });
     const page = await browser.newPage();
     await page.setViewport({ width: 800, height: 800, deviceScaleFactor: 1 });

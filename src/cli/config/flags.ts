@@ -1,4 +1,3 @@
-/* eslint-disable id-blacklist */
 import minimist from 'minimist';
 import { Config } from '../../core';
 
