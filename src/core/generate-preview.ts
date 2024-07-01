@@ -13,7 +13,9 @@ import { createScreenshot } from './utils/screenshot';
  */
 export const generatePreview = async (fileNames: string[], config: Config) => {
   if (!config.previewFile) {
-    console.log(red('No output file name provided. Skipping preview generation.'));
+    console.log(
+      red('No output file name provided. Skipping preview generation.')
+    );
     return;
   }
 
