@@ -9,32 +9,24 @@
     "svg-icon-review": "./bin/cli.js"
   },
   "scripts": {
-    "start": "node ./bin/cli.js *.svg",
-    "build:watch": "npm run build -- --watch",
+    "start": "bun ./bin/cli.js *.svg",
+    "build:watch": "bun run build -- --watch",
     "build": "tsc -p tsconfig.json",
-    "test": "jest",
-    "lint": "npx @biomejs/biome check --write ./src",
-    "format": "npx @biomejs/biome format --write ./src",
-    "changelog": "npx changelog-machine --config changelog.config.json",
-    "prepublish": "npm run build",
-    "version": "npm run changelog && git add CHANGELOG.md"
+    "lint": "bunx --bun @biomejs/biome check --write ./src",
+    "format": "bunx --bun @biomejs/biome format --write ./src",
+    "changelog": "bunx --bun changelog-machine --config changelog.config.json",
+    "prepublish": "bun run build",
+    "version": "bun run changelog && git add CHANGELOG.md"
   },
-  "files": [
-    "lib/"
-  ],
-  "keywords": [
-    "icons",
-    "SVG",
-    "Tooling",
-    "CLI"
-  ],
+  "files": ["lib/"],
+  "keywords": ["icons", "SVG", "Tooling", "CLI"],
   "engines": {
-    "node": ">=4.2.0"
+    "bun": ">=1.1.17"
   },
   "author": {
     "name": "Philipp Kief",
     "email": "philipp.kief@gmx.de",
-    "url": "https://pkief.github.io"
+    "url": "https://pkief.com"
   },
   "funding": "https://github.com/sponsors/pkief",
   "license": "MIT",
@@ -50,12 +42,8 @@
     "@biomejs/biome": "^1.8.3",
     "@types/glob": "^8.1.0",
     "@types/is-glob": "^4.0.4",
-    "@types/jest": "^29.5.12",
     "@types/minimist": "^1.2.5",
     "changelog-machine": "^1.1.0",
-    "jest": "^29.7.0",
-    "ts-jest": "^29.1.5",
-    "ts-node": "^10.9.2",
     "typescript": "^5.5.2"
   },
   "dependencies": {
