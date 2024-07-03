@@ -1,5 +1,5 @@
-import { writeFileSync } from 'fs';
-import { basename, join, resolve } from 'path';
+import { writeFileSync } from 'node:fs';
+import { basename, join, resolve } from 'node:path';
 import { green, red } from '../cli/utils';
 import { Config, Theme } from './models';
 import { previewStyles } from './styles';
