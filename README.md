@@ -32,7 +32,7 @@ The output is a preview of how the icons look in either dark or light background
 Optionally, an additional bigger icon (in size of 32x32px) will be shown in front of the preview. This is useful to see the icon in more detail. This can be done by adding the `--bigIcon` option like this:
 
 ```bash
-bunx --bun svg-icon-review --bigIcon file1.svg file2.svg
+bunx svg-icon-review --bigIcon file1.svg file2.svg
 ```
 
 The preview will look like this:
@@ -42,7 +42,7 @@ The preview will look like this:
 If further help is needed, the `--help` option can be used:
 
 ```bash
-bunx --bun svg-icon-review --help
+bunx svg-icon-review --help
 ```
 
 > Instead of "bunx" you can use "npx" if you prefer Node.js.
