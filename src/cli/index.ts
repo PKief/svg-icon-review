@@ -30,6 +30,6 @@ const run = async () => {
 try {
   run();
 } catch (error) {
-  console.error(error);
-  process.exit(1);
+  console.log(error);
+  throw error;
 }
