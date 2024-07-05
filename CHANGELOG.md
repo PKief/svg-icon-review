@@ -3,6 +3,17 @@
  All notable changes to this project will be documented in this file. Dates are displayed in UTC.
 
  
+#### [v2.0.0](https://github.com/PKief/svg-icon-review/compare/v1.1.0...v2.0.0) 
+
+> July 5, 2024 
+
+- Update release workflow [`75af482`](https://github.com/PKief/svg-icon-review/commit/75af482)
+- Update release workflow [`af68fd3`](https://github.com/PKief/svg-icon-review/commit/af68fd3)
+- Update imports for Bun.js [`05410db`](https://github.com/PKief/svg-icon-review/commit/05410db)
+- Update biome settings [`f496268`](https://github.com/PKief/svg-icon-review/commit/f496268)
+- Change platform to Bun.js [`b76b878`](https://github.com/PKief/svg-icon-review/commit/b76b878)
+- Migrate ESLint, Prettier to Biome [`80001fb`](https://github.com/PKief/svg-icon-review/commit/80001fb)
+ 
 #### [v1.1.0](https://github.com/PKief/svg-icon-review/compare/v1.0.0...v1.1.0) 
 
 > March 29, 2024 
