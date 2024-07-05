@@ -3,6 +3,12 @@
  All notable changes to this project will be documented in this file. Dates are displayed in UTC.
 
  
+#### [v2.0.2](https://github.com/PKief/svg-icon-review/compare/v2.0.1...v2.0.2) 
+
+> July 5, 2024 
+
+- Throw error instead of exiting with error code 1 [`976a354`](https://github.com/PKief/svg-icon-review/commit/976a354)
+ 
 #### [v2.0.1](https://github.com/PKief/svg-icon-review/compare/v2.0.0...v2.0.1) 
 
 > July 5, 2024 
