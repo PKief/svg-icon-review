@@ -1,1 +1,2 @@
-require('../lib/cli/index.js');
+#!/usr/bin/env bun
+import '../lib/cli/index.js';
