@@ -3,6 +3,12 @@
  All notable changes to this project will be documented in this file. Dates are displayed in UTC.
 
  
+#### [v2.0.1](https://github.com/PKief/svg-icon-review/compare/v2.0.0...v2.0.1) 
+
+> July 5, 2024 
+
+- Update readme [`62d146f`](https://github.com/PKief/svg-icon-review/commit/62d146f)
+ 
 #### [v2.0.0](https://github.com/PKief/svg-icon-review/compare/v1.1.0...v2.0.0) 
 
 > July 5, 2024 
