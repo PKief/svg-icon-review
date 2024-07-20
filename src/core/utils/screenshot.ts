@@ -13,7 +13,7 @@ export const createScreenshot = async (filePath: string, fileName: string) => {
       headless: true,
     });
     const page = await browser.newPage();
-    await page.setViewport({ width: 800, height: 800, deviceScaleFactor: 1 });
+    await page.setViewport({ width: 3200, height: 3200, deviceScaleFactor: 0 });
 
     await page.goto(htmlFilePath);
 
