@@ -18,32 +18,25 @@
     "prepublish": "bun run build",
     "version": "bun run changelog && git add CHANGELOG.md"
   },
-  "files": [
-    "lib/"
-  ],
-  "keywords": [
-    "icons",
-    "SVG",
-    "Tooling",
-    "CLI"
-  ],
+  "files": ["lib/"],
+  "keywords": ["icons", "SVG", "Tooling", "CLI"],
   "engines": {
     "bun": ">=1.1.17"
   },
   "author": {
-    "name": "Philipp Kief",
-    "email": "philipp.kief@gmx.de",
-    "url": "https://pkief.com"
+    "name": "Material Extensions",
+    "email": "material-icons-extensions@googlegroups.com",
+    "url": "https://github.com/material-extensions"
   },
   "funding": "https://github.com/sponsors/pkief",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/PKief/svg-icon-review/issues"
+    "url": "https://github.com/material-extensions/svg-icon-review/issues"
   },
-  "homepage": "https://github.com/PKief/svg-icon-review/blob/main/README.md",
+  "homepage": "https://github.com/material-extensions/svg-icon-review/blob/main/README.md",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/PKief/svg-icon-review.git"
+    "url": "git+https://github.com/material-extensions/svg-icon-review.git"
   },
   "devDependencies": {
     "@biomejs/biome": "^1.8.3",

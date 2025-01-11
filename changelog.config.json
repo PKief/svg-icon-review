@@ -1,4 +1,4 @@
 {
-  "repositoryUrl": "https://github.com/PKief/svg-icon-review",
+  "repositoryUrl": "https://github.com/material-extensions/svg-icon-review",
   "blacklistPattern": "^Release \\d+\\.\\d+\\.\\d+|^\\d+\\.\\d+\\.\\d+$"
 }
