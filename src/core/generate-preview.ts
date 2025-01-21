@@ -34,7 +34,7 @@ export const generatePreview = async (fileNames: string[], config: Config) => {
   writeFileSync(previewHtmlPath, previewTemplate);
 
   try {
-    await createScreenshot(previewHtmlPath, 'preview');
+    await createScreenshot(previewHtmlPath, 'preview', config.noSandbox);
 
     if (config.silent) return;
     if (config.debug) {

@@ -29,6 +29,8 @@ The output is a preview of how the icons look in either dark or light background
 
 ## Options
 
+### `--bigIcon`
+
 Optionally, an additional bigger icon (in size of 32x32px) will be shown in front of the preview. This is useful to see the icon in more detail. This can be done by adding the `--bigIcon` option like this:
 
 ```bash
@@ -38,6 +40,34 @@ bunx svg-icon-review --bigIcon file1.svg file2.svg
 The preview will look like this:
 
 <img src="./images/preview-big-icon.png" alt="logo" >
+
+### `--silent`
+
+By default, the tool will output a result message to the console. If you want to avoid this output, you can use the `--silent` option:
+
+```bash
+bunx svg-icon-review --silent file1.svg file2.svg
+```
+
+### `--debug`
+
+If you want to see the debug information, you can use the `--debug` option:
+
+```bash
+bunx svg-icon-review --debug file1.svg file2.svg
+```
+
+### `--noSandbox`
+
+By default, the tool uses a sandboxed environment to render the SVG icons. If you want to disable this sandbox, you can use the `--noSandbox` option:
+
+```bash
+bunx svg-icon-review --noSandbox file1.svg file2.svg
+```
+
+Running without a sandbox is strongly discouraged because of security risks. Consider configuring a sandbox instead. If you absolutely trust the content you with this tool, you can launch it with the --noSandbox argument.
+
+### `--help`
 
 If further help is needed, the `--help` option can be used:
 

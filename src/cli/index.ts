@@ -24,6 +24,7 @@ const run = async () => {
     debug: args.debug ?? false,
     silent: args.silent ?? false,
     bigIcon: args.bigIcon ?? false,
+    noSandbox: args.noSandbox ?? false,
   });
 };
 

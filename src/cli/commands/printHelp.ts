@@ -13,6 +13,7 @@ const printHelp = () => {
     --help, -h  Show help
     --silent, -s  Not showing any output
     --version, -v  Show version
+    --noSandbox, -n  Run without using a sandbox
     `
   );
 };

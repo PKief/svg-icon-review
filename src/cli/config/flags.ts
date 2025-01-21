@@ -7,6 +7,7 @@ export type CliFlags = {
   debug?: boolean;
   silent?: boolean;
   bigIcon?: boolean;
+  noSandbox?: boolean;
 };
 
 const flags: minimist.Opts | undefined = {
@@ -16,8 +17,16 @@ const flags: minimist.Opts | undefined = {
     'debug',
     'silent',
     'bigIcon',
+    'noSandbox',
   ] satisfies (keyof (CliFlags & Config))[],
-  alias: { v: 'version', h: 'help', d: 'debug', s: 'silent', b: 'bigIcon' },
+  alias: {
+    v: 'version',
+    h: 'help',
+    d: 'debug',
+    s: 'silent',
+    b: 'bigIcon',
+    n: 'noSandbox',
+  },
   unknown: (a) => true,
   default: { lang: 'en' },
   '--': true,
