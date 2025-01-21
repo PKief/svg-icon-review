@@ -1,7 +1,7 @@
 {
   "name": "svg-icon-review",
   "displayName": "SVG Icon Review",
-  "version": "2.1.0",
+  "version": "2.2.0",
   "description": "Tool to review SVG icons automatically",
   "main": "./lib/index.js",
   "module": "./lib/index.js",
@@ -18,8 +18,15 @@
     "prepublish": "bun run build",
     "version": "bun run changelog && git add CHANGELOG.md"
   },
-  "files": ["lib/"],
-  "keywords": ["icons", "SVG", "Tooling", "CLI"],
+  "files": [
+    "lib/"
+  ],
+  "keywords": [
+    "icons",
+    "SVG",
+    "Tooling",
+    "CLI"
+  ],
   "engines": {
     "bun": ">=1.1.17"
   },

@@ -3,6 +3,16 @@
  All notable changes to this project will be documented in this file. Dates are displayed in UTC.
 
  
+#### [v2.2.0](https://github.com/material-extensions/svg-icon-review/compare/v2.1.0...v2.2.0) 
+
+> January 21, 2025 
+
+- chore(ci): update release workflow [`00a6139`](https://github.com/material-extensions/svg-icon-review/commit/00a6139)
+- feat: add --noSandbox flag [`c6b66ac`](https://github.com/material-extensions/svg-icon-review/commit/c6b66ac)
+- chore: update dependencies [`4ce5110`](https://github.com/material-extensions/svg-icon-review/commit/4ce5110)
+- chore: move package to organization [`c090cda`](https://github.com/material-extensions/svg-icon-review/commit/c090cda)
+- chore: 🔒 use text-based Bun lockfile [`#5`](https://github.com/material-extensions/svg-icon-review/pull/5)
+ 
 #### [v2.1.0](https://github.com/material-extensions/svg-icon-review/compare/v2.0.3...v2.1.0) 
 
 > July 22, 2024 
