@@ -39,18 +39,18 @@
     "url": "git+https://github.com/material-extensions/svg-icon-review.git"
   },
   "devDependencies": {
-    "@biomejs/biome": "^1.8.3",
+    "@biomejs/biome": "^1.9.4",
     "@types/glob": "^8.1.0",
     "@types/is-glob": "^4.0.4",
     "@types/minimist": "^1.2.5",
     "changelog-machine": "^1.1.0",
-    "typescript": "^5.5.2"
+    "typescript": "^5.7.3"
   },
   "dependencies": {
-    "glob": "^10.4.2",
+    "glob": "^10.4.5",
     "is-glob": "^4.0.3",
-    "is-svg": "^5.0.1",
+    "is-svg": "^5.1.0",
     "minimist": "^1.2.8",
-    "puppeteer": "^22.12.1"
+    "puppeteer": "^22.15.0"
   }
 }
