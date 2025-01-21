@@ -1,4 +1,4 @@
-name: Release + Publish
+name: 🚀 Release + Publish
 
 on:
   workflow_dispatch:
@@ -24,29 +24,37 @@ jobs:
       id-token: write
 
     steps:
-      - name: Checkout 🛎️
+      - name: ✅ Use App Token for the Bot which is allowed to create releases
+        uses: actions/create-github-app-token@c1a285145b9d317df6ced56c09f525b5c2b6f755 # v1.11.1
+        id: app-token
+        with:
+          app-id: ${{ vars.BOT_APP_ID }}
+          private-key: ${{ secrets.BOT_PRIVATE_KEY }}
+
+      - name: 🛎️ Checkout
         uses: actions/checkout@v4
         with:
+          token: ${{ steps.app-token.outputs.token }}
           fetch-depth: 0
 
-      - name: Setup Platform 🛠
+      - name: 🛠 Setup Platform
         uses: oven-sh/setup-bun@v2
         with:
           bun-version-file: .bun-version
 
-      - name: Install dependencies 📦
+      - name: 📦 Install dependencies
         run: |
           bun install --frozen-lockfile
           bun add -g npm
 
-      - name: Update version ↗
+      - name: ↗ Update version
         run: |
-          git config --global user.name 'Philipp Kief'
-          git config --global user.email 'PKief@users.noreply.github.com'
+          git config user.name 'github-actions[bot]'
+          git config user.email 'github-actions[bot]@users.noreply.github.com'
           git config --global push.followTags true
           npm version ${{ env.VERSION_CHANGE }} -m "Release %s"
 
-      - name: Get meta data 🔍
+      - name: 🔍 Get meta data
         run: |
           VERSION=$(bun --print "(await import('./package.json')).version")
           NAME=$(bun --print "(await import('./package.json')).name")
@@ -55,20 +63,20 @@ jobs:
           echo NAME=$NAME >> $GITHUB_ENV
           echo DISPLAY_NAME=$DISPLAY_NAME >> $GITHUB_ENV
 
-      - name: Build ⚒️
+      - name: ⚒️ Build
         run: bun run build
 
-      - name: Push tags 📌
+      - name: 📌 Push tags
         run: git push
 
-      - name: Release ${{ env.VERSION }} 🔆
+      - name: 🔆 Release ${{ env.VERSION }}
         uses: softprops/action-gh-release@v1
         with:
           tag_name: v${{ env.VERSION }}
           name: ${{ env.DISPLAY_NAME }} v${{ env.VERSION }}
           generate_release_notes: true
 
-      - name: Publish to NPM Registry 🌐
+      - name: 🌐 Publish to NPM Registry
         run: |
           npm set "//registry.npmjs.org/:_authToken=${{ secrets.NPM_TOKEN }}"
           npm publish --provenance --access public
